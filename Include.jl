@@ -12,6 +12,8 @@ using CSV
 using DataFrames
 using ForwardDiff
 using PrettyTables
+using Plots
+using Colors
 
 # load my codes -
 include(joinpath(_PATH_TO_SRC, "Compute.jl"));
