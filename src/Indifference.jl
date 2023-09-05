@@ -21,3 +21,18 @@ function indifference(problem::MySimpleCobbDouglasChoiceProblem, U::Float64, xli
     # return -
     return Y;
 end
+
+function indifference(problem::MySimpleLinearChoiceProblem, U::Float64, xlim::Array{Float64,2})::Array{Float64,2}
+
+    # initialize -
+    α = problem.α
+   
+    # Use the VLDecisionsPackage to compute the indifference curve -
+    model = build(VLLinearUtilityFunction, (
+        α = problem.α,
+    ));
+    tmp = VLDecisionsPackage.indifference(model; utility = U, bounds = xlim, ϵ = 0.01);
+
+    # return array -
+    return tmp;
+end

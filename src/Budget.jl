@@ -1,4 +1,4 @@
-function budget(problem::AbstractSimpleChoiceProblem, xlim::Array{Float64,1})::Array{Float64,2}
+function budget(problem::T, xlim::Array{Float64,1})::Array{Float64,2} where {T <: AbstractSimpleChoiceProblem}
 
     # initialize -
     c = problem.c;
