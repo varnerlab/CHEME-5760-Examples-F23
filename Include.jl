@@ -15,6 +15,11 @@ using PrettyTables
 using Plots
 using Colors
 using Distributions
+using JLD2
+using FileIO
+using Statistics
+using LinearAlgebra
+using MathOptInterface
 
 # load my color palette -
 colors = Dict{Int,RGB}();
