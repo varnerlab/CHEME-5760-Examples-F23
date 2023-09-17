@@ -20,6 +20,7 @@ using FileIO
 using Statistics
 using LinearAlgebra
 using MathOptInterface
+using DataStructures
 
 # load my color palette -
 colors = Dict{Int,RGB}();
