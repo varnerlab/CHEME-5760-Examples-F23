@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="619px" height="231px" viewBox="0 0 619 231" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>Artboard</title>
+    <g id="Artboard" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <path id="Line" d="M189.522757,77.107083 L190.520097,77.1799769 L204.251639,78.1835919 L206.024688,78.313181 L204.993218,79.7611331 L197.004907,90.974936 L196.424705,91.789409 L194.795759,90.6290061 L195.375961,89.8145331 L201.148,81.71 L193.820312,85.1552604 L86.9254245,135.404994 L86.0204306,135.830418 L85.1695816,134.020431 L86.0745755,133.595006 L192.969463,83.3452725 L200.298,79.899 L190.374309,79.1746563 L189.376969,79.1017624 L189.522757,77.107083 Z" fill="#979797" fill-rule="nonzero"></path>
+        <path id="Line" d="M190.022757,137.607083 L191.020097,137.679977 L204.751639,138.683592 L206.524688,138.813181 L205.493218,140.261133 L197.504907,151.474936 L196.924705,152.289409 L195.295759,151.129006 L195.875961,150.314533 L201.648,142.21 L194.320312,145.65526 L87.4254245,195.904994 L86.5204306,196.330418 L85.6695816,194.520431 L86.5745755,194.095006 L193.469463,143.845273 L200.798,140.399 L190.874309,139.674656 L189.876969,139.601762 L190.022757,137.607083 Z" transform="translate(145.5, 167.5) scale(1, -1) translate(-145.5, -167.5)" fill="#979797" fill-rule="nonzero"></path>
+        <circle id="Oval" stroke="#E02020" fill="#E02020" cx="220" cy="72" r="8.5"></circle>
+        <circle id="Oval" stroke="#0091FF" fill="#0091FF" cx="220" cy="198" r="8.5"></circle>
+        <text id="p" font-family="CMUBright-Roman, CMU Bright" font-size="24" font-weight="400" fill="#000000">
+            <tspan x="125" y="86">p</tspan>
+        </text>
+        <text id="w---d" font-family="CMUBright-Roman, CMU Bright" font-size="24" font-weight="400" fill="#000000">
+            <tspan x="242" y="78">w - d</tspan>
+        </text>
+        <text id="w" font-family="CMUBright-Roman, CMU Bright" font-size="24" font-weight="400" fill="#000000">
+            <tspan x="242" y="206">w</tspan>
+        </text>
+        <text id="1---p" font-family="CMUBright-Roman, CMU Bright" font-size="24" font-weight="400" fill="#000000">
+            <tspan x="113" y="200">1 - p</tspan>
+        </text>
+        <g id="Group" transform="translate(315, 19)">
+            <path id="Line" d="M163.522757,55.107083 L164.520097,55.1799769 L178.251639,56.1835919 L180.024688,56.313181 L178.993218,57.7611331 L171.004907,68.974936 L170.424705,69.789409 L168.795759,68.6290061 L169.375961,67.8145331 L175.148,59.71 L167.820312,63.1552604 L60.9254245,113.404994 L60.0204306,113.830418 L59.1695816,112.020431 L60.0745755,111.595006 L166.969463,61.3452725 L174.298,57.899 L164.374309,57.1746563 L163.376969,57.1017624 L163.522757,55.107083 Z" fill="#979797" fill-rule="nonzero"></path>
+            <path id="Line" d="M164.022757,115.607083 L165.020097,115.679977 L178.751639,116.683592 L180.524688,116.813181 L179.493218,118.261133 L171.504907,129.474936 L170.924705,130.289409 L169.295759,129.129006 L169.875961,128.314533 L175.648,120.21 L168.320312,123.65526 L61.4254245,173.904994 L60.5204306,174.330418 L59.6695816,172.520431 L60.5745755,172.095006 L167.469463,121.845273 L174.798,118.399 L164.874309,117.674656 L163.876969,117.601762 L164.022757,115.607083 Z" transform="translate(119.5, 145.5) scale(1, -1) translate(-119.5, -145.5)" fill="#979797" fill-rule="nonzero"></path>
+            <circle id="Oval" stroke="#E02020" fill="#E02020" cx="194" cy="53" r="8.5"></circle>
+            <circle id="Oval" stroke="#0091FF" fill="#0091FF" cx="194" cy="179" r="8.5"></circle>
+            <circle id="Oval" stroke="#000000" fill="#FFFFFF" cx="57" cy="117" r="8.5"></circle>
+            <text id="p" font-family="CMUBright-Roman, CMU Bright" font-size="24" font-weight="400" fill="#000000">
+                <tspan x="99" y="67">p</tspan>
+            </text>
+            <text id="w---r" font-family="CMUBright-Roman, CMU Bright" font-size="24" font-weight="400" fill="#000000">
+                <tspan x="216" y="59">w - r</tspan>
+            </text>
+            <text id="w---r" font-family="CMUBright-Roman, CMU Bright" font-size="24" font-weight="400" fill="#000000">
+                <tspan x="216" y="187">w - r</tspan>
+            </text>
+            <text id="1---p" font-family="CMUBright-Roman, CMU Bright" font-size="24" font-weight="400" fill="#000000">
+                <tspan x="87" y="181">1 - p</tspan>
+            </text>
+            <text id="now" font-family="CMUBright-Roman, CMU Bright" font-size="24" font-weight="400" fill="#000000">
+                <tspan x="0" y="125">now</tspan>
+            </text>
+            <text id="future" font-family="CMUBright-Roman, CMU Bright" font-size="24" font-weight="400" fill="#000000">
+                <tspan x="163" y="22">future</tspan>
+            </text>
+        </g>
+        <text id="future" font-family="CMUBright-Roman, CMU Bright" font-size="24" font-weight="400" fill="#000000">
+            <tspan x="189" y="41">future</tspan>
+        </text>
+        <text id="now" font-family="CMUBright-Roman, CMU Bright" font-size="24" font-weight="400" fill="#000000">
+            <tspan x="26" y="144">now</tspan>
+        </text>
+        <circle id="Oval" stroke="#000000" fill="#FFFFFF" cx="83" cy="136" r="8.5"></circle>
+    </g>
+</svg>
