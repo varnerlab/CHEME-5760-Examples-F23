@@ -4,8 +4,8 @@ const _PATH_TO_SRC = joinpath(_ROOT, "src");
 const _PATH_TO_DATA = joinpath(_ROOT, "data");
 
 # download external packages
-using Pkg;
-Pkg.add(path="https://github.com/varnerlab/VLDecisionsPackage.jl.git")
+# using Pkg;
+# Pkg.add(path="https://github.com/varnerlab/VLDecisionsPackage.jl.git")
 # Pkg.activate("."); Pkg.instantiate(); Pkg.update()
 
 # load external packages -
