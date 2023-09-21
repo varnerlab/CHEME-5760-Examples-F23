@@ -4,7 +4,9 @@ const _PATH_TO_SRC = joinpath(_ROOT, "src");
 const _PATH_TO_DATA = joinpath(_ROOT, "data");
 
 # download external packages
-import Pkg; Pkg.activate("."); Pkg.instantiate(); Pkg.update()
+using Pkg;
+Pkg.add(path="https://github.com/varnerlab/VLDecisionsPackage.jl.git")
+# Pkg.activate("."); Pkg.instantiate(); Pkg.update()
 
 # load external packages -
 using VLDecisionsPackage
@@ -15,6 +17,12 @@ using PrettyTables
 using Plots
 using Colors
 using Distributions
+using JLD2
+using FileIO
+using Statistics
+using LinearAlgebra
+using MathOptInterface
+using DataStructures
 
 # load my color palette -
 colors = Dict{Int,RGB}();
