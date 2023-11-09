@@ -51,8 +51,8 @@ function sample(model::EpsilonSamplingModel, data::Dict{String,DataFrame}, ticke
     for t ∈ 1:𝒯
 
         # create a new parameter array -
-        parameter_array = Array{Float64,2}(undef, K,2);
-        fill!(parameter_array,0.0);
+        parameter_array = Array{Float64,2}(undef, K, 2);
+        fill!(parameter_array, 0.0);
 
         for k ∈ 1:K
             
@@ -86,7 +86,8 @@ function sample(model::EpsilonSamplingModel, data::Dict{String,DataFrame}, ticke
             aₜ = argmax(θ̂_vector);
 
             # pass that action to the world function, gives back a reward -
-            rₜ = world(aₜ, t, data, tickers);
+            rₜ = _world(aₜ, t, data, tickers);
+
 
             # update the parameters -
             # first, get the old parameters -
@@ -96,6 +97,8 @@ function sample(model::EpsilonSamplingModel, data::Dict{String,DataFrame}, ticke
             # update the old values with the new values -
             αₜ = αₒ + rₜ
             βₜ = βₒ + (1-rₜ)
+
+            # @show (aₜ, rₜ,  αₒ, βₒ, αₜ, βₜ)
 
             # build new distribution -
             action_distribution[aₜ] = Beta(αₜ, βₜ);
@@ -185,21 +188,21 @@ function sample(model::EpsilonSamplingModel;  𝒯::Int64 = 0, world::Function =
     return time_sample_results_dict;
 end
 
-function world(action::Int64, time::Int64, data::Dict{String,DataFrame}, tickers::Array{String,1})::Int64
+function _world(action::Int64, time::Int64, data::Dict{String,DataFrame}, tickers::Array{String,1})::Int64
 
     # initialize -
     result_flag = 0;
 
     # daily risk free rate -
-    r̄ = 0.0403;
-    risk_free_daily = ((1+r̄)^(1/365) - 1);
+    r̄ = 0.05;
+    risk_free_daily = ((1+r̄)^(1/252) - 1);
 
     # grab the ticker we are looking at?
     ticker_symbol = tickers[action];
 
     # grab the price -
     price_df = data[ticker_symbol];
-    P₁ = price_df[time, :volume_weighted_average_price]
+    P₁ = price_df[time,  :volume_weighted_average_price]
     P₂ = price_df[time + 1, :volume_weighted_average_price]
     R = log(P₂/P₁);
     if (R >= risk_free_daily)
@@ -254,7 +257,7 @@ function sample(model::ThompsonSamplingModel, data::Dict{String,DataFrame}, tick
         aₜ = argmax(θ̂_vector);
 
         # pass that action to the world function, gives back a reward -
-        rₜ = world(aₜ, t, data, tickers);
+        rₜ = _world(aₜ, t, data, tickers);
 
         # update the parameters -
         # first, get the old parameters -
@@ -408,4 +411,32 @@ function preference(beta::Array{Beta,1}, tickers::Array{String,1}; N::Int64 = 10
 
     # return -
     pref_array
+end
+
+
+function log_return_matrix(dataset::Dict{String, DataFrame}, 
+    firms::Array{String,1}; Δt::Float64 = (1.0/252.0), risk_free_rate::Float64 = 0.0)::Array{Float64,2}
+
+    # initialize -
+    number_of_firms = length(firms);
+    number_of_trading_days = nrow(dataset["AAPL"]);
+    return_matrix = Array{Float64,2}(undef, number_of_trading_days-1, number_of_firms);
+
+    # main loop -
+    for i ∈ eachindex(firms) 
+
+        # get the firm data -
+        firm_index = firms[i];
+        firm_data = dataset[firm_index];
+
+        # compute the log returns -
+        for j ∈ 2:number_of_trading_days
+            S₁ = firm_data[j-1, :volume_weighted_average_price];
+            S₂ = firm_data[j, :volume_weighted_average_price];
+            return_matrix[j-1, i] = (1/Δt)*log(S₂/S₁) - risk_free_rate;
+        end
+    end
+
+    # return -
+    return return_matrix;
 end
