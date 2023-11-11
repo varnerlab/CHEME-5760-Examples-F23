@@ -248,6 +248,7 @@ function _update(model::MyQLearningAgentModel, data::NamedTuple)::MyQLearningAge
     a = data[:a];
     r = data[:r];
     s′ = data[:s′];
+    
 
     # grab parameters from the model -
     γ, Q, α = model.γ, model.Q, model.α
@@ -275,9 +276,7 @@ function simulate(agent::MyQLearningAgentModel, environment::T, startstate::Tupl
 
     # initialize -
     s = environment.states[startstate]
-    # s = startstate
     actions = agent.actions;
-
     number_of_actions = length(actions);
 
     # simulation loop -
@@ -293,7 +292,6 @@ function simulate(agent::MyQLearningAgentModel, environment::T, startstate::Tupl
             # ok: so we are in some state s, let's use our memory to suggest a new action
             Q = agent.Q;
             a = argmax(Q[s,:]);
-
         end
 
         # check the action -
@@ -301,6 +299,7 @@ function simulate(agent::MyQLearningAgentModel, environment::T, startstate::Tupl
         current_position = environment.coordinates[s];
         new_position = current_position .+ environment.moves[a]
         if (haskey(environment.states, new_position) == true)
+
             # ask the world, what is my next state and reward from this (s,a)
             (s′,r) = environment(s,a)
         else
