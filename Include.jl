@@ -23,6 +23,7 @@ using Statistics
 using LinearAlgebra
 using MathOptInterface
 using DataStructures
+using Flux
 
 # load my color palette -
 colors = Dict{Int,RGB}();
